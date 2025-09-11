@@ -42,7 +42,8 @@
     "rating": 4.9,
     "reviews": 456,
     "origin": "Italian-style roast",
-    "notes": "Creamy, balanced, velvety"
+    "notes": "Creamy, balanced, velvety",
+    "favorite": true
   },
   "latte": {
     "name": "Latte",
@@ -57,7 +58,8 @@
     "rating": 4.7,
     "reviews": 567,
     "origin": "Medium roast blend",
-    "notes": "Smooth, creamy, mild coffee flavor"
+    "notes": "Smooth, creamy, mild coffee flavor",
+    "favorite": true
   },
   "flat-white": {
     "name": "Flat White",
@@ -94,7 +96,12 @@
     "price": "$5.75",
     "description": "Chocolate espresso delight",
     "category": "coffee",
-    "ingredients": ["Double espresso", "Chocolate syrup", "Steamed milk", "Whipped cream"],
+    "ingredients": [
+      "Double espresso",
+      "Chocolate syrup",
+      "Steamed milk",
+      "Whipped cream"
+    ],
     "caffeine": "126mg",
     "calories": "360",
     "brewTime": "3-4 minutes",
@@ -117,7 +124,8 @@
     "rating": 4.7,
     "reviews": 432,
     "origin": "Special cold brew blend",
-    "notes": "Smooth, less acidic, naturally sweet"
+    "notes": "Smooth, less acidic, naturally sweet",
+    "favorite": true
   },
   "pour-over": {
     "name": "Pour Over",
@@ -196,7 +204,13 @@
     "price": "$3.25",
     "description": "House-made, moist, walnut",
     "category": "pastries",
-    "ingredients": ["Ripe bananas", "Flour", "Walnuts", "Brown sugar", "Butter"],
+    "ingredients": [
+      "Ripe bananas",
+      "Flour",
+      "Walnuts",
+      "Brown sugar",
+      "Butter"
+    ],
     "calories": "326",
     "allergens": ["Gluten", "Dairy", "Tree nuts"],
     "rating": 4.8,
@@ -210,7 +224,12 @@
     "price": "$4.50",
     "description": "Warm, gooey, cream cheese frosting",
     "category": "pastries",
-    "ingredients": ["Yeast dough", "Cinnamon", "Brown sugar", "Cream cheese frosting"],
+    "ingredients": [
+      "Yeast dough",
+      "Cinnamon",
+      "Brown sugar",
+      "Cream cheese frosting"
+    ],
     "calories": "452",
     "allergens": ["Gluten", "Dairy", "Eggs"],
     "rating": 4.9,
@@ -224,7 +243,12 @@
     "price": "$4.25",
     "description": "Twice-baked with almond cream",
     "category": "pastries",
-    "ingredients": ["Day-old croissant", "Almond cream", "Sliced almonds", "Powdered sugar"],
+    "ingredients": [
+      "Day-old croissant",
+      "Almond cream",
+      "Sliced almonds",
+      "Powdered sugar"
+    ],
     "calories": "496",
     "allergens": ["Gluten", "Dairy", "Tree nuts"],
     "rating": 4.8,
@@ -266,20 +290,32 @@
     "price": "$5.75",
     "description": "Fall favorite with real pumpkin",
     "category": "seasonal",
-    "ingredients": ["Espresso", "Pumpkin puree", "Spices", "Steamed milk", "Whipped cream"],
+    "ingredients": [
+      "Espresso",
+      "Pumpkin puree",
+      "Spices",
+      "Steamed milk",
+      "Whipped cream"
+    ],
     "caffeine": "126mg",
     "calories": "380",
     "availability": "Sept - Nov",
     "rating": 4.9,
     "reviews": 892,
-    "notes": "Creamy, spiced, autumn comfort"
+    "notes": "Creamy, spiced, autumn comfort",
+    "favorite": true
   },
   "maple-cinnamon-latte": {
     "name": "Maple Cinnamon Latte",
     "price": "$5.50",
     "description": "Canadian maple, warm spices",
     "category": "seasonal",
-    "ingredients": ["Espresso", "Canadian maple syrup", "Cinnamon", "Steamed milk"],
+    "ingredients": [
+      "Espresso",
+      "Canadian maple syrup",
+      "Cinnamon",
+      "Steamed milk"
+    ],
     "caffeine": "126mg",
     "calories": "320",
     "availability": "Oct - Dec",
@@ -292,7 +328,12 @@
     "price": "$5.75",
     "description": "Holiday spices and sweetness",
     "category": "seasonal",
-    "ingredients": ["Espresso", "Gingerbread syrup", "Steamed milk", "Gingerbread cookie"],
+    "ingredients": [
+      "Espresso",
+      "Gingerbread syrup",
+      "Steamed milk",
+      "Gingerbread cookie"
+    ],
     "caffeine": "126mg",
     "calories": "340",
     "availability": "Nov - Jan",
@@ -305,7 +346,12 @@
     "price": "$5.50",
     "description": "Floral notes with local honey",
     "category": "seasonal",
-    "ingredients": ["Espresso", "Lavender syrup", "Local honey", "Steamed milk"],
+    "ingredients": [
+      "Espresso",
+      "Lavender syrup",
+      "Local honey",
+      "Steamed milk"
+    ],
     "caffeine": "126mg",
     "calories": "280",
     "availability": "Mar - May",
@@ -331,7 +377,13 @@
     "price": "$5.25",
     "description": "Anti-inflammatory wellness drink",
     "category": "seasonal",
-    "ingredients": ["Turmeric", "Ginger", "Cinnamon", "Black pepper", "Coconut milk"],
+    "ingredients": [
+      "Turmeric",
+      "Ginger",
+      "Cinnamon",
+      "Black pepper",
+      "Coconut milk"
+    ],
     "caffeine": "0mg",
     "calories": "120",
     "availability": "Year-round",
