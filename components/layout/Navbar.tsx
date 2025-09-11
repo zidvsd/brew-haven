@@ -7,8 +7,8 @@ export default function Navbar() {
   const [isActive, setIsActive] = useState("Home");
 
   return (
-    <div className="bg-foam">
-      <div className="flex flex-row items-center justify-between custom-container w-full py-4">
+    <div className="bg-foam sticky top-0 shadow-sm z-50">
+      <div className="flex flex-row  items-center justify-between custom-container w-full py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-x-2 group">
           <Coffee className="text-espresso size-8 transition-transform duration-300 group-hover:rotate-20" />

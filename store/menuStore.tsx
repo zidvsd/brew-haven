@@ -15,6 +15,7 @@ type MenuItem = {
   origin?: string;
   notes?: string;
   favorite?: boolean;
+  image: string;
 };
 interface MenuStore {
   menu: (MenuItem & { slug: string })[];

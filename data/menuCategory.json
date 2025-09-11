@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Coffee",
+    "description": "Expertly crafted espresso drinks",
+    "image": "/img/coffee-beans-FH9Ul5Q8.jpg",
+    "icon": "Coffee"
+  },
+  {
+    "title": "Pastries",
+    "description": "Fresh baked daily",
+    "image": "/img/latte-art-CTZiS9hB.jpg",
+    "icon": "Croissant"
+  },
+  {
+    "title": "Seasonal",
+    "description": "Limited time specialities",
+    "image": "/img/pastries-BnonMSXI.jpg",
+    "icon": "Snowflake"
+  }
+]

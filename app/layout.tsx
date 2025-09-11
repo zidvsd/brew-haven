@@ -2,9 +2,20 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ClientProvider from "@/components/ClientProvider"; // client component wrapper
-
+import ClientProvider from "@/components/ClientProvider";
 import type { Metadata } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+
+// import fonts
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter", // creates a CSS variable
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   title: "Brew Haven",
@@ -19,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.variable} ${playfair.variable}`}>
         <Navbar />
         <ClientProvider>{children}</ClientProvider>
         <Footer />
