@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import useMenuStore from "@/store/menuStore";
 import BreadCrumbs from "@/components/BreadCrumbs";
@@ -13,7 +13,7 @@ export default function MenuItemPage({
   params: Promise<{ category: string; slug: string }>;
 }) {
   // unwrap the params promise
-  const { category, slug } = use(params);
+  const { slug } = use(params);
 
   const { menu } = useMenuStore();
 
@@ -31,11 +31,12 @@ export default function MenuItemPage({
       {/* item container */}
       <div className="mt-8 bg-coffeeLight rounded-xl shadow-md overflow-hidden max-w-3xl mx-auto">
         {/* Image */}
-        <div className="relative">
-          <img
+        <div className="relative w-full h-72">
+          <Image
             src={item.image || "/img/default.jpg"}
             alt={item.name}
-            className="w-full h-72 object-cover"
+            fill
+            className="object-cover rounded-tl-lg rounded-tr-lg"
           />
           {item.category && (
             <span className="absolute top-4 right-4 text-espresso bg-coffeeLight font-semibold text-xs px-3 py-1 rounded-full">
@@ -123,7 +124,7 @@ export default function MenuItemPage({
           {item.notes && (
             <div className="bg-foam p-4 rounded-lg mt-6 text-blackCoffee">
               <h3 className="font-semibold mb-1">Tasting Notes</h3>
-              <p className="italic text-grayCoffee">"{item.notes}"</p>
+              <p className="italic">&quot;{item.notes}&quot;</p>
             </div>
           )}
 

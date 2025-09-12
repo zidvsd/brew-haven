@@ -8,7 +8,7 @@ export default function BreadCrumbs() {
   const parts = pathName.split("/").filter(Boolean);
 
   return (
-    <nav className="font-inter text-sm flex space-x-2">
+    <nav className="font-inter text-sm  flex space-x-2">
       <Link
         href="/"
         className="text-grayCoffee hover:text-espresso hover-utility"

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Croissant, Coffee, Snowflake, LucideIcon } from "lucide-react";
 import menuCategory from "@/data/menuCategory.json";
 import useMenuStore from "@/store/menuStore";
+import Image from "next/image";
 const icons: Record<string, LucideIcon> = {
   Coffee,
   Croissant,
@@ -42,11 +43,16 @@ export default function MenuCategory({
             <div className="absolute z-10 text-coffeeLight rounded-full py-1 px-4 bg-espresso font-inter font-bold text-lg top-4 right-4">
               {categChecker(category.title)} items
             </div>
-            <img
-              src={category.image}
-              className="rounded-tr-lg rounded-tl-lg  hover-utility hover:scale-105 h-56 object-cover group-hover:scale-105 "
-              alt=""
-            />
+            <div className="relative h-56 overflow-hidden rounded-tl-lg rounded-tr-lg group-hover:scale-105 transition-transform">
+              <Image
+                src={category.image}
+                alt={category.title}
+                width={400} // approximate width
+                height={224} // approximate height matching h-56
+                className="object-cover w-full h-full"
+                priority // optional: loads image faster
+              />
+            </div>
             <div className="flex flex-col items-start py-4 px-8 lg:py-6">
               <div className="flex flex-row items-center gap-x-4">
                 {Icon && (
