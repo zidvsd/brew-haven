@@ -30,7 +30,7 @@ const useMenuStore = create<MenuStore>((set) => ({
     set({ loading: true });
     try {
       // ⏳ Artificial 3s delay
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const res = await fetch("/data.json");
       const data = await res.json();

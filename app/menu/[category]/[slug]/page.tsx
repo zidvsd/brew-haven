@@ -2,6 +2,7 @@
 
 import { notFound } from "next/navigation";
 import useMenuStore from "@/store/menuStore";
+import BreadCrumbs from "@/components/BreadCrumbs";
 import { use } from "react";
 
 export default function MenuItemPage({
@@ -19,6 +20,7 @@ export default function MenuItemPage({
 
   return (
     <div className="custom-container py-16">
+      <BreadCrumbs />
       <h1 className="text-3xl font-bold font-playfair">{item.name}</h1>
       <p className="text-lg text-grayCoffee">{item.description}</p>
       <p className="text-xl font-semibold mt-4">{item.price}</p>

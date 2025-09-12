@@ -46,7 +46,7 @@ export default function Favorites() {
                     <h1 className="text-blackCoffee font-semibold">
                       {card.name}
                     </h1>
-                    <Star className="fill-accent text-accent size-5" />
+                    <Star className="fill-accentHome text-accentHome size-5" />
                   </div>
                   <p className="text-sm text-grayCoffee">{card.description}</p>
                   <h2 className="text-espresso font-bold">{card.price}</h2>

@@ -70,7 +70,9 @@ export default function Navbar() {
       >
         <div className="custom-container px-12 flex flex-col border-t border-t-coffeeMedium text-coffeeDark font-inter py-2 gap-y-2">
           <Link
-            onClick={() => setIsActive("Home")}
+            onClick={() => {
+              setIsActive("Home"), setIsToggle(!isToggle);
+            }}
             className={`${
               isActive === "Home"
                 ? "bg-coffeeMedium text-coffeeDark"
@@ -81,7 +83,9 @@ export default function Navbar() {
             Home
           </Link>
           <Link
-            onClick={() => setIsActive("Menu")}
+            onClick={() => {
+              setIsActive("Menu"), setIsToggle(!isToggle);
+            }}
             className={`${
               isActive === "Menu"
                 ? "bg-coffeeMedium text-coffeeDark"
@@ -92,7 +96,9 @@ export default function Navbar() {
             Menu
           </Link>
           <Link
-            onClick={() => setIsActive("About")}
+            onClick={() => {
+              setIsActive("About"), setIsToggle(!isToggle);
+            }}
             className={`${
               isActive === "About"
                 ? "bg-coffeeMedium text-coffeeDark"

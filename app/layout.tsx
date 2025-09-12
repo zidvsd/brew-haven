@@ -5,7 +5,6 @@ import Footer from "@/components/layout/Footer";
 import ClientProvider from "@/components/ClientProvider";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
-
 // import fonts
 const inter = Inter({
   subsets: ["latin"],
