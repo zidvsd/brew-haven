@@ -14,14 +14,14 @@ export default function MenuItems({ category }: { category: string }) {
           <Link
             key={index}
             href={`/menu/${item.category}/${item.slug}`}
-            className="rounded-lg flex flex-col sm:flex-row shadow-sm  bg-coffeeLight items-start font-inter hover-utility hover:shadow-xl hover:scale-102"
+            className="rounded-lg flex flex-col sm:flex-row shadow-sm bg-coffeeLight font-inter hover-utility hover:shadow-xl hover:scale-102 items-stretch md:max-h-40"
           >
             <img
-              className="w-full sm:w-1/7 rounded-tl-lg sm:rounded-bl-lg  object-cover h-32 sm:h-full"
+              className="w-full sm:w-1/4 rounded-tl-lg rounded-tr-lg sm:rounded-tr-none sm:rounded-bl-lg object-cover h-32 sm:h-auto"
               src={item.image}
               alt=""
             />
-            <div className="flex flex-col gap-y-4 py-8 px-8">
+            <div className="flex flex-col gap-y-4 py-8 px-8 md:py-4 ">
               <div className="flex flex-row gap-x-4 items-center">
                 <h1 className="font-bold text-blackCoffee text-xl">
                   {item.name}
