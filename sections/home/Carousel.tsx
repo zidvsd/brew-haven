@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
-import "keen-slider/keen-slider.min.css";
 import useMenuStore from "@/store/menuStore";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ViewMenuButton from "@/components/buttons/ViewMenuButton";
