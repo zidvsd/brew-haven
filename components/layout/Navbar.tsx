@@ -23,7 +23,7 @@ export default function Navbar() {
             onClick={() => setIsActive("Home")}
             className={`${
               isActive === "Home" ? "text-espresso" : "text-grayCoffee"
-            } hover-utility hover:opacity-80 font-bold`}
+            } hover-utility hover:opacity-80 font-semibold`}
             href={"/"}
           >
             Home
@@ -32,7 +32,7 @@ export default function Navbar() {
             onClick={() => setIsActive("Menu")}
             className={`${
               isActive === "Menu" ? "text-espresso" : "text-grayCoffee"
-            } hover-utility hover:opacity-80 font-bold`}
+            } hover-utility hover:opacity-80 font-semibold`}
             href={"/menu"}
           >
             Menu
@@ -41,7 +41,7 @@ export default function Navbar() {
             onClick={() => setIsActive("About")}
             className={`${
               isActive === "About" ? "text-espresso" : "text-grayCoffee"
-            } hover-utility hover:opacity-80 font-bold`}
+            } hover-utility hover:opacity-80 font-semibold`}
             href={"/about"}
           >
             About
@@ -77,7 +77,7 @@ export default function Navbar() {
               isActive === "Home"
                 ? "bg-coffeeMedium text-coffeeDark"
                 : "bg-transparent"
-            } hover-utility hover:opacity-80 font-bold p-2`}
+            } hover-utility hover:opacity-80 font-semibold p-2`}
             href={"/"}
           >
             Home
@@ -90,7 +90,7 @@ export default function Navbar() {
               isActive === "Menu"
                 ? "bg-coffeeMedium text-coffeeDark"
                 : "bg-transparent"
-            } hover-utility hover:opacity-80 font-bold p-2`}
+            } hover-utility hover:opacity-80 font-semibold p-2`}
             href={"/menu"}
           >
             Menu
@@ -103,7 +103,7 @@ export default function Navbar() {
               isActive === "About"
                 ? "bg-coffeeMedium text-coffeeDark"
                 : "bg-transparent"
-            } hover-utility hover:opacity-80 font-bold p-2`}
+            } hover-utility hover:opacity-80 font-semibold p-2`}
             href={"/about"}
           >
             About
