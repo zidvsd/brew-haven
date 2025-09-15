@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import useMenuStore from "@/store/menuStore";
