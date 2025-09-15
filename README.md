@@ -67,10 +67,6 @@
   <p>
     Showcases featured brews and seasonal specials using Keen Slider.
   </p>
-  <h3>Mock Authentication</h3>
-  <p>
-    Includes styled sign-in/sign-up pages (front-end only).
-  </p>
   <h2>Contributing</h2>
   <p>Have ideas or want to help improve the app? Contributions are welcome!</p>
   <h3>How to contribute:</h3>
