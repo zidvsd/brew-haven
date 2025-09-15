@@ -6,25 +6,29 @@ import useMenuStore from "@/store/menuStore";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ViewMenuButton from "@/components/buttons/ViewMenuButton";
 import Link from "next/link";
+import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 export default function Carousel() {
   const { menu, loading } = useMenuStore();
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
-    mode: "snap",
-    slides: { perView: 1, spacing: 16 }, // mobile-first default
-    breakpoints: {
-      "(min-width: 769px)": {
-        slides: { perView: 2, spacing: 12 },
-      },
-      "(min-width: 1025px)": {
-        slides: { perView: 3, spacing: 16 },
-      },
-      "(min-width: 1280px)": {
-        slides: { perView: 4, spacing: 16 },
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      loop: true,
+      mode: "snap",
+      slides: { perView: 1, spacing: 16 },
+      breakpoints: {
+        "(min-width: 769px)": { slides: { perView: 2, spacing: 12 } },
+        "(min-width: 1025px)": { slides: { perView: 3, spacing: 16 } },
+        "(min-width: 1280px)": { slides: { perView: 4, spacing: 16 } },
       },
     },
-  });
+    []
+  );
+
+  useEffect(() => {
+    if (instanceRef.current) {
+      instanceRef.current.update(); // 👈 force recalculation
+    }
+  }, [menu]);
   if (loading) {
     return (
       <div className="bg-coffeeLight">
