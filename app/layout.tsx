@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SkeletonTheme } from "react-loading-skeleton";
 import ClientProvider from "@/components/ClientProvider";
+import "keen-slider/keen-slider.min.css";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 // import fonts
