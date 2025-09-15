@@ -5,10 +5,17 @@ import { capitalize } from "@/lib/utils";
 
 export default function BreadCrumbs() {
   const pathName = usePathname();
-  const parts = pathName.split("/").filter(Boolean);
+
+  // parts you don't want to appear in breadcrumbs
+  const excluded = ["coffee", "pastries", "seasonal"];
+
+  // split path and filter out excluded ones
+  const parts = pathName
+    .split("/")
+    .filter((part) => part && !excluded.includes(part.toLowerCase()));
 
   return (
-    <nav className="font-inter text-sm  flex space-x-2">
+    <nav className="font-inter text-sm flex space-x-2">
       <Link
         href="/"
         className="text-grayCoffee hover:text-espresso hover-utility"
@@ -23,7 +30,7 @@ export default function BreadCrumbs() {
           <span key={i}>
             /{" "}
             {isLast ? (
-              <span className="hover:text-espresso hover-utility ">
+              <span className="hover:text-espresso hover-utility">
                 {capitalize(part)}
               </span>
             ) : (

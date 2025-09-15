@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { SkeletonTheme } from "react-loading-skeleton";
 import ClientProvider from "@/components/ClientProvider";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -31,7 +32,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable}`}>
         <Navbar />
-        <ClientProvider>{children}</ClientProvider>
+        <SkeletonTheme baseColor="#d6c1b1" highlightColor="#f2e4d9">
+          <ClientProvider>{children}</ClientProvider>
+        </SkeletonTheme>
         <Footer />
       </body>
     </html>

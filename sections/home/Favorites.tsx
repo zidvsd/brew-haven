@@ -33,7 +33,8 @@ export default function Favorites() {
                     className="bg-coffeeLight p-4 rounded-lg shadow-md gap-y-4 flex flex-col items-start animate-pulse"
                   >
                     <Skeleton width={120} height={20} />
-                    <Skeleton count={2} width="100%" />
+
+                    <Skeleton width={100} height={20} />
                     <Skeleton width={60} height={20} />
                   </div>
                 ))
