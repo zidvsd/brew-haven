@@ -26,7 +26,7 @@ export default function Carousel() {
 
   useEffect(() => {
     if (instanceRef.current) {
-      instanceRef.current.update(); // 👈 force recalculation
+      instanceRef.current.update(); 
     }
   }, [menu]);
   if (loading) {

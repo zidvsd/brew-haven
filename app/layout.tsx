@@ -7,6 +7,7 @@ import ClientProvider from "@/components/ClientProvider";
 import "keen-slider/keen-slider.min.css";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import PageTransition from "@/components/PageTransition";
 // import fonts
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,9 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable}`}>
         <Navbar />
         <SkeletonTheme baseColor="#d6c1b1" highlightColor="#f2e4d9">
-          <ClientProvider>{children}</ClientProvider>
+          <ClientProvider>
+            <PageTransition>{children}</PageTransition>
+          </ClientProvider>
         </SkeletonTheme>
         <Footer />
       </body>
