@@ -19,15 +19,15 @@
     layout for desktop and mobile. Powered entirely on the frontend with Zustand for
     state management.
   </p>
-  <h2>Features</h2>
-  <ul>
-    <li><strong>Image Carousel</strong>: Smooth looping carousel built with Keen Slider.</li>
-    <li><strong>Menu Browser</strong>: Browse coffee and pastry items with dynamic filtering.</li>
-    <li><strong>Lucide Icons</strong>: Elegant icons for navigation and interaction.</li>
-    <li><strong>Loading Skeletons</strong>: Smooth user experience while content loads.</li>
-    <li><strong>Responsive Design</strong>: Optimized for mobile, tablet, and desktop.</li>
-  </ul>
-  <h2>Installation</h2>
+ <h2>Features</h2>
+<ul>
+  <li><strong>Image Carousel</strong>: Smooth looping carousel built with Keen Slider.</li>
+  <li><strong>Menu Browser</strong>: Browse coffee and pastry items with dynamic filtering.</li>
+  <li><strong>Lucide Icons</strong>: Elegant icons for navigation and interaction.</li>
+  <li><strong>Loading Skeletons</strong>: Smooth user experience while content loads.</li>
+  <li><strong>Responsive Design</strong>: Optimized for mobile, tablet, and desktop.</li>
+  <li><strong>Framer Motion Animations</strong>: Beautiful fade, slide, and stagger effects for interactive UI.</li>
+</ul>
   <h3>Prerequisites</h3>
   <ul>
     <li>Node.js (version 18 or higher)</li>
@@ -67,6 +67,25 @@
   <p>
     Showcases featured brews and seasonal specials using Keen Slider.
   </p>
+  <h3>Animations</h3>
+<p>
+  This project uses <a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a>
+  for smooth transitions and scroll-based animations. Example:
+</p>
+<pre><code>
+import { motion } from "framer-motion";
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+export default function AnimatedHeader() {
+  return (
+    &lt;motion.h1 variants={fadeIn} initial="hidden" animate="visible"&gt;
+      Welcome to Brew Haven
+    &lt;/motion.h1&gt;
+  );
+}
+</code></pre>
   <h2>Contributing</h2>
   <p>Have ideas or want to help improve the app? Contributions are welcome!</p>
   <h3>How to contribute:</h3>
