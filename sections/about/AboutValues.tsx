@@ -1,6 +1,8 @@
+"use client";
 import { Heart, Users, Leaf, Award } from "lucide-react";
 import valuesData from "@/data/values.json";
-
+import { motion } from "framer-motion";
+import { itemVariants, containerVariants } from "@/lib/animationVariants";
 const icons = [Heart, Users, Leaf, Award];
 
 export default function AboutValues() {
@@ -10,11 +12,18 @@ export default function AboutValues() {
         <h1 className="font-playfair font-bold text-5xl text-center mb-8">
           Our Values
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div
+          variants={containerVariants}
+          whileInView="visible"
+          initial="hidden"
+          viewport={{ once: true, amount: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {valuesData.values.map((value, index) => {
             const Icon = icons[index];
             return (
-              <div
+              <motion.div
+                variants={itemVariants}
                 key={index}
                 className="flex flex-col items-center gap-4 p-6  text-center "
               >
@@ -29,10 +38,10 @@ export default function AboutValues() {
                     {value.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

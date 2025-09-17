@@ -3,8 +3,9 @@ import { Star } from "lucide-react";
 import useMenuStore from "@/store/menuStore";
 import ViewMenuButton from "@/components/buttons/ViewMenuButton";
 import Skeleton from "react-loading-skeleton";
+import { itemVariants, containerVariants } from "@/lib/animationVariants";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { motion } from "framer-motion";
 export default function Favorites() {
   const menu = useMenuStore((state) => state.menu);
   const loading = useMenuStore((state) => state.loading);
@@ -23,7 +24,13 @@ export default function Favorites() {
           </p>
         </div>
 
-        <div className="grid font-inter md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 lg:gap-6 w-full">
+        <motion.div
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariants}
+          whileInView="visible"
+          initial="hidden"
+          className="grid font-inter md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-8 lg:gap-6 w-full"
+        >
           {loading
             ? Array(4)
                 .fill(null)
@@ -39,7 +46,8 @@ export default function Favorites() {
                   </div>
                 ))
             : filteredFavorites.map((card, index) => (
-                <div
+                <motion.div
+                  variants={itemVariants}
                   key={index}
                   className="bg-coffeeLight p-4 rounded-lg shadow-md gap-y-4 flex flex-col items-start hover-utility hover:shadow-xl hover:transform hover:-translate-y-2"
                 >
@@ -51,9 +59,9 @@ export default function Favorites() {
                   </div>
                   <p className="text-sm text-grayCoffee">{card.description}</p>
                   <h2 className="text-espresso font-bold">{card.price}</h2>
-                </div>
+                </motion.div>
               ))}
-        </div>
+        </motion.div>
 
         <ViewMenuButton />
       </div>

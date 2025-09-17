@@ -1,5 +1,5 @@
 "use client";
-
+import { motion } from "framer-motion";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import useMenuStore from "@/store/menuStore";
@@ -8,6 +8,7 @@ import ViewMenuButton from "@/components/buttons/ViewMenuButton";
 import Link from "next/link";
 import { useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
+import { itemVariants, containerVariants } from "@/lib/animationVariants";
 export default function Carousel() {
   const { menu, loading } = useMenuStore();
   const [sliderRef, instanceRef] = useKeenSlider(
@@ -26,9 +27,10 @@ export default function Carousel() {
 
   useEffect(() => {
     if (instanceRef.current) {
-      instanceRef.current.update(); 
+      instanceRef.current.update();
     }
   }, [menu]);
+
   if (loading) {
     return (
       <div className="bg-coffeeLight">
@@ -72,9 +74,17 @@ export default function Carousel() {
         </p>
         {/* Carousel */}
 
-        <div ref={sliderRef} className="keen-slider mt-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          ref={sliderRef}
+          className="keen-slider mt-8"
+        >
           {menu.map((item) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               key={item.slug}
               className="keen-slider__slide bg-foam rounded-lg  p-4 flex flex-col  ease-in-out "
             >
@@ -104,9 +114,9 @@ export default function Carousel() {
                   )}
                 </div>
               </Link>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         {/* Navigation Arrows */}
         <ArrowLeft
           className="hidden lg:flex lg:absolute size-8 border border-gray-100 

@@ -5,34 +5,13 @@ import Image from "next/image";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
-
+import { containerVariants, itemVariants } from "@/lib/animationVariants";
 export default function MenuItems({ category }: { category: string }) {
   const { menu, loading } = useMenuStore(); // ✅ make sure loading exists in your store
   const filteredCategory = menu.filter(
     (item) => item.category.toLowerCase() === category.toLowerCase()
   );
-  const containerVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
+
   return (
     <div className="bg-beige">
       <div className="flex flex-col gap-y-8 mx-auto py-16 custom-container max-w-5xl">
@@ -63,9 +42,8 @@ export default function MenuItems({ category }: { category: string }) {
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
             whileInView="visible" // triggers animation when in viewport
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
             className="flex flex-col gap-y-8"
           >
             {filteredCategory.map((item, index) => (

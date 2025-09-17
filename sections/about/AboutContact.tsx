@@ -1,13 +1,29 @@
+"use client";
+import { motion } from "framer-motion";
+import {
+  containerVariants,
+  leftVariants,
+  rightVariants,
+} from "@/lib/animationVariants";
 import { MapPin, Phone, Mail, Clock8, Clock9, Coffee } from "lucide-react";
 export default function AboutContact() {
   return (
-    <div className="flex flex-col custom-container py-16">
+    <motion.div
+      variants={containerVariants}
+      whileInView="visible"
+      initial="hidden"
+      viewport={{ once: true, amount: 0.2 }}
+      className="flex flex-col custom-container py-16"
+    >
       <h1 className="font-playfair font-bold text-5xl text-center mb-8">
         Visit Us
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 place-items-start md:place-items-center gap-8">
         {/* get in touch */}
-        <div className="flex flex-col space-y-4 font-inter">
+        <motion.div
+          variants={leftVariants}
+          className="flex flex-col space-y-4 font-inter"
+        >
           <h2 className="font-playfair text-2xl font-bold">Get in Touch</h2>
           <div className="flex flex-row gap-x-4 ">
             <MapPin className="text-espresso size-5 mt-1" />
@@ -31,9 +47,12 @@ export default function AboutContact() {
               <p>hello@brewhaven.com</p>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* hours of operation */}
-        <div className="flex flex-col space-y-4 font-inter w-full lg:max-w-lg">
+        <motion.div
+          variants={rightVariants}
+          className="flex flex-col space-y-4 font-inter w-full lg:max-w-lg"
+        >
           <h2 className="font-playfair text-2xl font-bold">
             Hours of Operation
           </h2>
@@ -64,8 +83,8 @@ export default function AboutContact() {
               Happy Hour: 2-4 PM Daily - 20% off all pastries!
             </span>{" "}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

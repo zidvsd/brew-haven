@@ -1,14 +1,25 @@
+"use client";
+import { motion } from "framer-motion";
 import menuCards from "@/data/menuCards.json";
 import Image from "next/image";
+import { itemVariants, containerVariants } from "@/lib/animationVariants";
 export default function Features() {
+  const containerVariants = {};
   return (
     <div className="custom-container gap-y-8 flex flex-col py-16 items-center justify-center">
       <h1 className="text-blackCoffee  font-playfair text-center font-bold text-4xl">
         What Makes Us Special
       </h1>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-4 w-full">
+      <motion.div
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+        className="grid md:grid-cols-3 gap-8 md:gap-4 w-full"
+      >
         {menuCards.map((card, index) => (
-          <div
+          <motion.div
+            variants={itemVariants}
             key={index}
             className="rounded-md flex flex-col bg-coffeeLight shadow-md rounded-tr-md rounded-tl-md"
           >
@@ -30,9 +41,9 @@ export default function Features() {
                 {card.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
