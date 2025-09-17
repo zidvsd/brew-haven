@@ -74,18 +74,21 @@
 </p>
 <pre><code>
 import { motion } from "framer-motion";
+
 const fadeIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+hidden: { opacity: 0, y: 30 },
+visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
+
 export default function AnimatedHeader() {
-  return (
-    &lt;motion.h1 variants={fadeIn} initial="hidden" animate="visible"&gt;
-      Welcome to Brew Haven
-    &lt;/motion.h1&gt;
-  );
+return (
+&lt;motion.h1 variants={fadeIn} initial="hidden" animate="visible"&gt;
+Welcome to Brew Haven
+&lt;/motion.h1&gt;
+);
 }
 </code></pre>
+
   <h2>Contributing</h2>
   <p>Have ideas or want to help improve the app? Contributions are welcome!</p>
   <h3>How to contribute:</h3>
