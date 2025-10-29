@@ -9,7 +9,7 @@
   <p>
     Check it out on Vercel:
     <a href="https://brew-haven.vercel.app/" target="_blank">
-     https://brew-haven-app.vercel.app/
+     https://coffee-app-ruddy.vercel.app/
     </a>
   </p>
   <h1>☕ Brew Haven</h1>
