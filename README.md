@@ -1,108 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <h1>🌐 Live Demo</h1>
-  <p>
-    Check it out on Vercel:
-    <a href="https://brew-haven.vercel.app/" target="_blank">
-      https://brew-haven.vercel.app/
-    </a>
-  </p>
-  <h1>☕ Brew Haven</h1>
-  <p>
-    A modern coffee shop web app built with Next.js, TypeScript, and Tailwind CSS.
-    It features a clean design, interactive carousel for featured items, and a responsive
-    layout for desktop and mobile. Powered entirely on the frontend with Zustand for
-    state management.
-  </p>
- <h2>Features</h2>
-<ul>
-  <li><strong>Image Carousel</strong>: Smooth looping carousel built with Keen Slider.</li>
-  <li><strong>Menu Browser</strong>: Browse coffee and pastry items with dynamic filtering.</li>
-  <li><strong>Lucide Icons</strong>: Elegant icons for navigation and interaction.</li>
-  <li><strong>Loading Skeletons</strong>: Smooth user experience while content loads.</li>
-  <li><strong>Responsive Design</strong>: Optimized for mobile, tablet, and desktop.</li>
-  <li><strong>Framer Motion Animations</strong>: Beautiful fade, slide, and stagger effects for interactive UI.</li>
-</ul>
-  <h3>Prerequisites</h3>
-  <ul>
-    <li>Node.js (version 18 or higher)</li>
-    <li>NPM or Yarn</li>
-  </ul>
-  <h3>Steps</h3>
-  <ol>
-    <li>
-      Clone the repository:
-      <pre><code>git clone https://github.com/yourusername/brew-haven.git</code></pre>
-    </li>
-    <li>
-      Navigate to the project directory:
-      <pre><code>cd brew-haven</code></pre>
-    </li>
-    <li>
-      Install dependencies:
-      <pre><code>npm install</code></pre>
-    </li>
-    <li>
-      Start the development server:
-      <pre><code>npm run dev</code></pre>
-      <p>
-        This will open the app at
-        <a href="http://localhost:3000" target="_blank">
-          http://localhost:3000
-        </a>.
-      </p>
-    </li>
-  </ol>
-  <h2>Usage</h2>
-  <h3>Browse Menu</h3>
-  <p>
-    Explore coffee and pastry items via a responsive grid. Click any item to view details.
-  </p>
-  <h3>Carousel</h3>
-  <p>
-    Showcases featured brews and seasonal specials using Keen Slider.
-  </p>
-  <h3>Animations</h3>
-<p>
-  This project uses <a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a>
-  for smooth transitions and scroll-based animations. Example:
-</p>
-<pre><code>
+# ☕ Brew Haven
+
+![version](https://img.shields.io/badge/version-0.1.0-blue.svg)
+
+Live demo: https://coffee-app-ruddy.vercel.app/
+
+## What this project does
+
+Brew Haven is a modern, front-end-focused coffee shop web app built with Next.js and TypeScript. It showcases a responsive menu, featured carousel, subtle motion effects, and a clean UI for browsing coffees and pastries. The app is static/SSR-ready and uses a small client-side state store for UI state.
+
+Key features
+
+- Image carousel for featured items (Keen Slider)
+- Responsive menu with category filtering and item pages
+- Smooth UI animations using Framer Motion
+- Lightweight state management with Zustand
+- Skeleton loading UI for better perceived performance
+
+## Why it’s useful
+
+This repo is a compact example of a production-ish Next.js app using modern tooling (React 19, Next 15, TypeScript, Tailwind). It's useful as:
+
+- A starter/template for marketing or small product sites
+- A showcase of accessible, responsive UI patterns and animations
+- A learning reference for integrating Keen Slider, Framer Motion, and Zustand in Next.js
+
+## Tech stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Keen Slider
+- Zustand
+- Lucide icons
+
+See `package.json` for full dependency versions.
+
+## Quick start
+
+Prerequisites:
+
+- Node.js 18+ (or compatible with the Next.js version in `package.json`)
+- npm (or yarn/pnpm)
+
+Clone and run locally:
+
+```powershell
+git clone https://github.com/yourusername/brew-haven.git
+cd brew-haven
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 in your browser.
+
+Scripts
+
+- `npm run dev` — development server
+- `npm run build` — production build (`--turbopack` enabled)
+- `npm run start` — start production server
+- `npm run lint` — run ESLint
+
+## Project layout (high level)
+
+- `app/` — Next.js app routes and pages (server/client components)
+- `components/` — shared UI components
+- `sections/` — page sections (home, about, menu)
+- `data/` & `public/` — content and static assets
+- `store/` — Zustand store (`store/menuStore.tsx`)
+
+Explore the `app/` and `components/` folders to find UI entry points.
+
+## Usage examples
+
+Example: start the dev server and view the carousel and menu.
+
+Example snippet (Framer Motion usage already in the codebase):
+
+```ts
 import { motion } from "framer-motion";
 
 const fadeIn = {
-hidden: { opacity: 0, y: 30 },
-visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 export default function AnimatedHeader() {
-return (
-&lt;motion.h1 variants={fadeIn} initial="hidden" animate="visible"&gt;
-Welcome to Brew Haven
-&lt;/motion.h1&gt;
-);
+  return (
+    <motion.h1 initial="hidden" animate="visible" variants={fadeIn}>
+      Welcome to Brew Haven
+    </motion.h1>
+  );
 }
-</code></pre>
+```
 
-  <h2>Contributing</h2>
-  <p>Have ideas or want to help improve the app? Contributions are welcome!</p>
-  <h3>How to contribute:</h3>
-  <ol>
-    <li>Fork the repository.</li>
-    <li>Create a new branch for your changes.</li>
-    <li>Implement features or fix bugs.</li>
-    <li>Test thoroughly.</li>
-    <li>Submit a pull request with a meaningful description.</li>
-  </ol>
-  <h2>Contact</h2>
-  <p>
-    For questions or feedback, feel free to email me at
-    <a href="mailto:rashidvisda@gmail.com">rashidvisda@gmail.com</a>.
-  </p>
-</body>
-</html>
+## Where to get help
+
+- Open an issue in this repository for bugs or feature requests
+- Email the maintainer: `rashidvisda@gmail.com`
+
+If you need more detailed developer docs, consider adding a `/docs` folder or a project wiki.
+
+## Maintainers & Contributing
+
+Maintainer: Rashid Visda — `rashidvisda@gmail.com`
+
+Contributions are welcome. For contribution guidelines, see `CONTRIBUTING.md`.
+
+Basic contribution flow:
+
+1. Fork the repo and create a feature branch
+2. Run tests (if any) and linting
+3. Open a PR with a clear description of changes
+
+Please keep pull requests small and focused.
+
+## Security & License
+
+This repository does not include a LICENSE file. Add a `LICENSE` in the root if you intend to open-source the project.
+
+## Next steps (suggested)
+
+- Add `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md` for clear contributor expectations
+- Add CI (build/test) badges to the README after setting up GitHub Actions or another CI
+- Add runtime environment docs if the app requires environment variables
+
+---
+
+If you'd like, I can also create a minimal `CONTRIBUTING.md` (recommended so the README link works). Want me to add that now?
